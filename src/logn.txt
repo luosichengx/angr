@@ -1,0 +1,7 @@
+2019-09-20 17:30:21,676 - __main__ - INFO - ===========================================
+2019-09-20 17:30:21,676 - __main__ - INFO - Analysing floattest/lessecho
+2019-09-20 17:31:24,671 - __main__ - WARNING - throw out exception
+2019-09-20 17:31:24,672 - __main__ - WARNING - Analysing time out
+2019-09-20 17:31:25,067 - __main__ - INFO - 270 path found
+2019-09-20 17:31:25,069 - __main__ - INFO - ===========================================
+2019-09-20 17:31:25,069 - __main__ - INFO - Analysing floattest/float5_fp_l2.out

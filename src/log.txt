@@ -1,0 +1,5 @@
+2019-10-21 19:54:45,974 - __main__ - INFO - ===========================================
+2019-10-21 19:54:45,974 - __main__ - INFO - Analysing other/float4_fp_l2.out
+2019-10-21 20:14:49,002 - __main__ - WARNING - throw out exception
+2019-10-21 20:14:49,018 - __main__ - WARNING - Analysing time out
+2019-10-21 20:14:49,189 - __main__ - INFO - 25 path found
