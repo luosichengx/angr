@@ -77,15 +77,15 @@ With the project, you can reproduce three experiments. You can find the detail d
 
     [Neural network - Evaluation](#evaluationsection-52)
     
-    [Increment-KNN - Evaluation](#training-and-evaluation)
+    [Increment-KNN - Evaluation](#training-and-evaluationsection-42-52)
 + time prediction (Section 5.2.3, Table 4)
 
-    [Neural network - Evaluation](#evaluation)
+    [Neural network - Evaluation](#evaluationsection-52)
 + simulation for solving time (Section 5.3, Table 6)
 
-    [Neural network - Simulation](#simulation) 
+    [Neural network - Simulation](#simulationsection-53) 
     
-    [Increment-KNN - Simulation](#simulation-1)
+    [Increment-KNN - Simulation](#simulationsection-53-1)
 
 To reproduce experiments for different dataset, you need to change the dataset name in the path-related options. Just in case the hard coded problem, our dataset name is gnucore(for GNU coreutils(angr)), busybox(Busybox utilities(angr)), smt-comp(for SMT-COMP), klee(for GNU coreutils(KLEE)).
 
