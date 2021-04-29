@@ -146,7 +146,7 @@ You can check the trained model with the same file using `load_file` options, th
 
 `python train.py --input data/gnucore/pad_feature --load_file g_pad_feature_l_z_r_200_0 --model lstm --time_selection z3 --regression`
 
-#### Simulation
+####<a name="s"> Simulation </a>
 Then, we simulate the solving time with our purposed system. The time is calculated with the Eq.(1),(2) in the paper. The screen outputs show the data that predicted wrongly, and the simulation results shown in Table.6. The results include original solving time, solving time after boosting(total_time), timeout constraints number with your setting threshold, and tp, fn, fp cases numbers, also the classification measurement results for prediction(regression result would be classified with you setting threshold).
 
 `python simulation.py --model_name lstm --load_file checkpoints/g_pad_feature_l_z_r_200_0.pkl --test_directory data/gnucore/single_test/arch --time_selection adjust --regression`
