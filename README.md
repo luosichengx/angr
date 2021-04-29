@@ -73,15 +73,15 @@ The following instruction would tell you how our most modules work. So you can c
 
 With the project, you can reproduce three experiments. You can find the detail description in the quoted part.
 
-+ the classification of timeout constraint models (Section 5.2.1, Table 2)
++ the classification of timeout constraint models (*Section 5.2.1, Table 2*)
 
     [Neural network - Evaluation](#evaluationsection-52)
     
     [Increment-KNN - Evaluation](#training-and-evaluationsection-42-52)
-+ time prediction (Section 5.2.3, Table 4)
++ time prediction (*Section 5.2.3, Table 4*)
 
     [Neural network - Evaluation](#evaluationsection-52)
-+ simulation for solving time (Section 5.3, Table 6)
++ simulation for solving time (*Section 5.3, Table 6*)
 
     [Neural network - Simulation](#simulationsection-53) 
     
