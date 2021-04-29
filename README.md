@@ -127,7 +127,7 @@ For example, we use GNU coreutil dataset to train the LSTM regression model. The
  + runs a simulation for program `arch` with the model you used.
 
 Next, we introduce the command separately for a better explanation.
-#### Training
+#### Training(*Section 4.2*)
 The `train.py` does the feature extraction, neural network training, and some evaluations. The result of feature extraction would be saved in the path of `input`, so you can reuse the feature of SMT scripts. We do not provide this middle result because the data size is too large. After training, the model would be saved in the `checkpoints` directory, the model name is in the format of `dataset_input_model_time-type_task_threshold_index.pkl`.
 
 `python train.py --data_source data/gnucore/single_test --input data/gnucore/pad_feature --model lstm --time_selection z3 --threshold 200 --regression --cross_index 0`
@@ -146,7 +146,7 @@ You can check the trained model with the same file using `load_file` options, th
 
 `python train.py --input data/gnucore/pad_feature --load_file g_pad_feature_l_z_r_200_0 --model lstm --time_selection z3 --regression`
 
-####<a name="s"> Simulation </a>
+#### Simulation(*Section 5.3*)
 Then, we simulate the solving time with our purposed system. The time is calculated with the Eq.(1),(2) in the paper. The screen outputs show the data that predicted wrongly, and the simulation results shown in Table.6. The results include original solving time, solving time after boosting(total_time), timeout constraints number with your setting threshold, and tp, fn, fp cases numbers, also the classification measurement results for prediction(regression result would be classified with you setting threshold).
 
 `python simulation.py --model_name lstm --load_file checkpoints/g_pad_feature_l_z_r_200_0.pkl --test_directory data/gnucore/single_test/arch --time_selection adjust --regression`
@@ -162,14 +162,14 @@ For example, we use our GNU coreutil dataset to train incremental-KNN classifica
 
 Next, we introduce the command separately for a better explanation.
 
-#### <a id="nn_eva">Training and evaluation</a>
+#### Training and evaluation(*Section 4.2, 5.2*)
 The `train_KNN.py` does the feature extraction and KNN evaluation. The result of feature extraction would be saved in the path of `input`, so you can reuse the feature of scripts. We only provide the result for GNU(angr) in the JSON structure in the `KNN_training_data` directory, which is also used in our KNN predictor for symbolic execution tools. You can use it with `--input KNN_training_data/gnucore.json`. You should get the result in Table.2 and get a more detailed result for single programs.
 
 `python train_KNN.py --data_source data/gnucore/single_test --input data/gnucore/fv2_serial --time_selection z3 --time_limit_setting 200 --model_selection increment-knn`
 
 We support two main settings including KNN implemented in sklearn(non-adaptive so poor in performance, better in efficiency, mainly for comparison), incremental-KNN. You may use different command-line arguments. 
  
-#### Simulation
+#### Simulation(*Section 5.3*)
 The following description is the same as the neural network simulation. Just in case you skip the neural network part, we repeat the description.
 
 Then, we simulate the solving time with our purposed system. The time is calculated with the Eq.(1),(2) in the paper. The screen outputs show the data that predicted wrongly, and the simulation results shown in Table.6. The results include original solving time, solving time after boosting(total_time), timeout constraints number with your setting threshold, and tp, fn, fp cases numbers, also the classification measurement results for prediction.
