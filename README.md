@@ -74,17 +74,12 @@ The following instruction would tell you how our most modules work. So you can c
 With the project, you can reproduce three experiments. You can find the detail description in the quoted part.
 
 + the classification of timeout constraint models (Section 5.2.1, Table 2)
-
     [Neural network - Evaluation](#evaluation)
-    
     [Increment-KNN - Evaluation](#training-and-evaluation)
 + time prediction (Section 5.2.3, Table 4)
-
     [Neural network - Evaluation](#evaluation)
 + simulation for solving time (Section 5.3, Table 6)
-
     [Neural network - Simulation](#simulation) 
-    
     [Increment-KNN - Simulation](#simulation-1)
 
 To reproduce experiments for different dataset, you need to change the dataset name in the path-related options. Just in case the hard coded problem, our dataset name is gnucore(for GNU coreutils(angr)), busybox(Busybox utilities(angr)), smt-comp(for SMT-COMP), klee(for GNU coreutils(KLEE)).
