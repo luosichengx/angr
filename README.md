@@ -21,7 +21,7 @@ tar -zxvf gnu-angr.tar.gz
 
 After you get the data, we recommend you to put the SMT files in the `data/{dataset}/single_test` directory, this is not forced, but the scripts are based on fixed relative paths.
 
-## SMT solving(optional, time-consuming, about hours long for example)
+## SMT solving(completed in advance, optional, time-consuming, about hours long for example)
 
  Considering the time budget, the data we provided have already done this part for you. But you can use this command to solve the SMT script and add the solved time into your files on your own.
 ```
@@ -74,12 +74,17 @@ The following instruction would tell you how our most modules work. So you can c
 With the project, you can reproduce three experiments. You can find the detail description in the quoted part.
 
 + the classification of timeout constraint models (Section 5.2.1, Table 2)
+
     [Neural network - Evaluation](#evaluation)
+    
     [Increment-KNN - Evaluation](#training-and-evaluation)
 + time prediction (Section 5.2.3, Table 4)
+
     [Neural network - Evaluation](#evaluation)
 + simulation for solving time (Section 5.3, Table 6)
+
     [Neural network - Simulation](#simulation) 
+    
     [Increment-KNN - Simulation](#simulation-1)
 
 To reproduce experiments for different dataset, you need to change the dataset name in the path-related options. Just in case the hard coded problem, our dataset name is gnucore(for GNU coreutils(angr)), busybox(Busybox utilities(angr)), smt-comp(for SMT-COMP), klee(for GNU coreutils(KLEE)).
@@ -136,7 +141,7 @@ The `train.py` does the feature extraction, neural network training, and some ev
 
  For tree-LSTM, our model uses the feature vector instead of the abstract tree by default, which makes it functionally works like LSTM. But you may use `--tree_for_assert` option to use the abstract tree. To make it more practicable, we make some inductions, which replace oversized abstract trees with vectors. Our results suggest the improvement does not worth the cost. If you want to further research the tree structure, you could work on it in `preprocessing/abstract_tree_extraction.py`.
  
-#### Evaluation
+#### Evaluation(*Section 5.2*)
 You can check the trained model with the same file using `load_file` options, the other setting should be the same as the last command. The evaluation result includes more measurement results (e.g. MAE for regression, precision,recall,f1_score,confusion_matrix for classification) and the predicted result for selected test dataset. The result would also be saved in the `checkpoints` directory, the result name is in the format of `dataset_evaulation_task_index.pkl`.
 
 `python train.py --input data/gnucore/pad_feature --load_file g_pad_feature_l_z_r_200_0 --model lstm --time_selection z3 --regression`
